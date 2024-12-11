@@ -1,0 +1,74 @@
+/* Basic styles for shimmer effect */
+.shimmer {
+  background: linear-gradient(
+    to right,
+    var(--shimmer-background-primary, #f0f0f0) 8%, 
+    var(--shimmer-background-secondary, #e0e0e0) 18%, 
+    var(--shimmer-background-primary, #f0f0f0) 33%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2.2s linear infinite forwards;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Main Menu container styles */
+.main-menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 67px);
+  background: var(--background-color, #fff);
+}
+
+/* Menu container for proper layout */
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 18px 50px;
+  background-color: var(--menu-background-color, #fafafa);
+}
+
+/* Res-detail styles */
+.res-detail .restaurant-name {
+  display: flex;
+  gap: 20px;
+}
+
+.res-detail .restaurant-rating {
+  background-color: #f0f0f0;
+}
+
+.restaurant-costs p {
+  background-color: #f0f0f0;
+}
+
+.restaurant-category {
+  background-color: #f0f0f0;
+}
+
+.category-details {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color, #ccc);
+}
+
+.category-details .cat-det h1,
+.category-details .cat-det p {
+  background-color: #f0f0f0;
+}
+
+.category-details .dish-img {
+  background-color: #f0f0f0;
+}
+
