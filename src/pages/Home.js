@@ -23,9 +23,7 @@ const Home=()=>{
             const data=await fetch(RES_API)
             const json=await data.json();
     
-            console.log(json)
-            console.log(json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-            // Add checks before accessing nested properties
+             // Add checks before accessing nested properties
 
             const restaurantsData=json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
 

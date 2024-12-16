@@ -10,7 +10,7 @@ const ResturantMenu = () => {
     const [showIndex, setShowIndex] = useState(0);
 
     const resInfo = useResturantMenu(resId);
-    console.log(resInfo)
+    //console.log(resInfo)
 
     if (resInfo == null) return <MenuShimmer/>;
 

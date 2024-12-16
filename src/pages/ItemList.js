@@ -12,9 +12,9 @@ const Item = ({ item }) => {
 
 
     const handleAddItem=()=>{
-        console.log("Item being added:", item); // Log the item before dispatching
+        //console.log("Item being added:", item); // Log the item before dispatching
         dispatch(addItems(item));
-        console.log("Add")
+        //console.log("Add")
     }
     
     return (

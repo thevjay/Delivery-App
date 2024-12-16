@@ -2,9 +2,16 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 import { useSelector } from 'react-redux';
 import { HomeIcon, BuildingOfficeIcon, PhoneIcon, ShoppingBagIcon } from '@heroicons/react/16/solid';
+import { useState } from 'react';
 
 const Navbar = () => {
     const cartItems = useSelector((state) => state.cart.items);
+
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
 
     return (
         <div className="bg-gray-200 shadow-md">
@@ -67,13 +74,42 @@ const Navbar = () => {
 
                     {/* Mobile Menu Icon */}
                     <div className="md:hidden">
-                        <button className="text-gray-700 focus:outline-none">
+                        <button onClick={toggleMobileMenu} className="text-gray-700 focus:outline-none">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
                             </svg>
                         </button>
                     </div>
                 </div>
+
+                
+                {/* Mobile Menu Links */}
+                {isMobileMenuOpen && (
+                    <div className='md:hidden'>
+                        <ul className='flex flex-col space-y-2 text-gray-700'>
+                            <li>
+                                <Link to={'/'} className='block p-2 rounded-md hover:bg-gray-200'>
+                                    <p className='text-gray-700 w-4 h-4'>Home</p>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={'/about'} className='block p-2 rounded-md hover:bg-gray-200'>
+                                    <p className='text-gray-700 w-4 h-4'>About</p>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={'/contact'} className='block p-2 rounded-md hover:bg-gray-200'>
+                                    <p className='text-gray-700 w-4 h-4'>Contact</p>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={'/'} className='block p-2 rounded-md hover:bg-gray-200'>
+                                    <p className='text-gray-700 w-4 h-4'>Cart</p>
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                )}
             </div>
         </div>
     )

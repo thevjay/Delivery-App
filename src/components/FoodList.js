@@ -6,7 +6,7 @@ import { ArrowLongLeftIcon } from '@heroicons/react/16/solid';
 import { ArrowLongRightIcon } from '@heroicons/react/16/solid';
 
 const FoodList = ({ foods }) => {
-  console.log(foods);
+     
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, instanceRef] = useKeenSlider({
